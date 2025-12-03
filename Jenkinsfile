@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
+                git branch: 'dev',
                     credentialsId: 'token',
                     url: 'https://github.com/ravikumara004/acc.git'
             }
@@ -12,19 +12,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'echo Building application'
+                sh 'echo from dev Building application'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'echo Running tests'
+                sh 'echo dev Running tests'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'echo Deploying application'
+                sh 'echo from dev Deploying application'
             }
         }
     }
